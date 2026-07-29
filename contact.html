@@ -1,0 +1,38 @@
+---
+layout: page
+title: Contact
+permalink: /contact/
+kicker: Get In Touch
+subtitle: Sponsorship inquiries, event questions, or anything else.
+description: Contact Basil Hunter Motorsport for sponsorship and partnership inquiries.
+---
+
+<!-- SETUP REQUIRED: create a free form at https://formspree.io, then replace
+     YOUR_FORM_ID below with the ID Formspree gives you. Until then the form
+     will not deliver. -->
+<form class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required>
+  </div>
+  <div>
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic">
+      <option>Sponsorship / Partnership</option>
+      <option>Events</option>
+      <option>Media</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </div>
+</form>

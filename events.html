@@ -1,0 +1,35 @@
+---
+layout: page
+title: Events & Recaps
+permalink: /events/
+kicker: The Season
+subtitle: Where the program runs next, and how every weekend went.
+description: Basil Hunter Motorsport event schedule and track day recaps from New Jersey Motorsports Park and beyond.
+---
+
+<h2>Upcoming Events</h2>
+<!-- PLACEHOLDER: replace with the real schedule. Add or remove rows as needed. -->
+<table class="events-table">
+  <thead>
+    <tr><th>Date</th><th>Venue</th><th>Event</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>TBD</td><td>NJMP Thunderbolt</td><td>Track event</td></tr>
+    <tr><td>TBD</td><td>NJMP Lightning</td><td>Track event</td></tr>
+  </tbody>
+</table>
+
+<h2>Event Recaps</h2>
+{% if site.posts.size > 0 %}
+<div class="grid-2">
+  {% for post in site.posts %}
+  <a class="card card-link" href="{{ post.url | relative_url }}">
+    <p class="card-date">{{ post.date | date: "%B %-d, %Y" }}{% if post.venue %} &middot; {{ post.venue }}{% endif %}</p>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p>First recap coming soon.</p>
+{% endif %}

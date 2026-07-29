@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="post">
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">Event Recap</p>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {% if page.venue %} &middot; {{ page.venue }}{% endif %}
+      </p>
+    </div>
+  </section>
+  <div class="container page-body post-body">
+    {{ content }}
+    <div class="post-share">
+      <p class="share-label">Share this recap</p>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener">X</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="back-link"><a href="{{ '/events/' | relative_url }}">&larr; All events and recaps</a></p>
+  </div>
+</article>

@@ -1,0 +1,36 @@
+title: Basil Hunter Investment Group
+tagline: Motorsport Program
+description: >-
+  The Basil Hunter Investment Group racing program. Track events, recaps,
+  and partnership opportunities built around a Porsche Cayman GTS
+  campaigned at Northeast road courses.
+url: "https://basilhunter.com"
+baseurl: ""
+
+author:
+  name: Basil Hunter Investment Group
+  email: rbgraham@rx2solutions.com # PLACEHOLDER — swap for a basilhunter.com address if you set one up
+
+# Social preview image used when a page has no image of its own
+logo: /assets/img/og-default.jpg
+
+permalink: /recaps/:year/:month/:title/
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

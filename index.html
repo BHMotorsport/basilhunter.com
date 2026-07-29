@@ -1,0 +1,76 @@
+---
+layout: default
+title: Home
+description: The Basil Hunter Investment Group motorsport program. A Porsche Cayman GTS campaigned at Northeast road courses, with event recaps and partnership opportunities.
+---
+<section class="hero">
+  <div class="container">
+    <p class="kicker">Basil Hunter Investment Group</p>
+    <h1>Built for the Track.<br>Driven with Purpose.</h1>
+    <p class="lede">
+      The Basil Hunter motorsport program campaigns a Porsche Cayman GTS at
+      premier Northeast road courses. Follow the events, watch the recaps,
+      and see where the program goes next.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/events/' | relative_url }}">Events &amp; Recaps</a>
+      <a class="btn btn-ghost" href="{{ '/sponsors/' | relative_url }}">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      <a class="card card-link" href="{{ '/car/' | relative_url }}">
+        <h3>The Car</h3>
+        <p>A purpose-built 981 Porsche Cayman GTS. Mid-engine balance, a full track safety package, and a build sheet that keeps evolving.</p>
+      </a>
+      <a class="card card-link" href="{{ '/events/' | relative_url }}">
+        <h3>The Season</h3>
+        <p>Regular events at New Jersey Motorsports Park and beyond, with a written recap after every weekend on track.</p>
+      </a>
+      <a class="card card-link" href="{{ '/sponsors/' | relative_url }}">
+        <h3>The Partnership</h3>
+        <p>Trackside visibility, content your brand can share, and a paddock that doubles as a place to do business.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="partners-strip">
+  <div class="container">
+    <p class="kicker">Our Partners</p>
+    <h2>Proudly Backed By</h2>
+    <!-- PLACEHOLDER: as partners sign on, drop their logo files (SVG or PNG,
+         transparent background, white/light versions work best on the navy band)
+         into /assets/img/partners/ and swap the placeholders below. Wrap each
+         in a link to the partner's site. -->
+    <div class="partners-logos">
+      <a href="{{ '/sponsors/' | relative_url }}" aria-label="Partner slot available"><img src="{{ '/assets/img/partners/partner-placeholder-1.svg' | relative_url }}" alt="Partner logo slot — your brand here"></a>
+      <a href="{{ '/sponsors/' | relative_url }}" aria-label="Partner slot available"><img src="{{ '/assets/img/partners/partner-placeholder-2.svg' | relative_url }}" alt="Partner logo slot — your brand here"></a>
+      <a href="{{ '/sponsors/' | relative_url }}" aria-label="Partner slot available"><img src="{{ '/assets/img/partners/partner-placeholder-3.svg' | relative_url }}" alt="Partner logo slot — your brand here"></a>
+    </div>
+    <a class="partners-cta" href="{{ '/sponsors/' | relative_url }}">Become a Partner</a>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <p class="kicker">From the Track</p>
+    <h2>Latest Recaps</h2>
+    {% if site.posts.size > 0 %}
+    <div class="grid-3">
+      {% for post in site.posts limit: 3 %}
+      <a class="card card-link" href="{{ post.url | relative_url }}">
+        <p class="card-date">{{ post.date | date: "%b %-d, %Y" }}</p>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="lede">First event recap coming soon.</p>
+    {% endif %}
+  </div>
+</section>
