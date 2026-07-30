@@ -7,22 +7,83 @@ subtitle: Sponsorship inquiries, event questions, or anything else. Submissions 
 description: Contact Basil Hunter Motorsport for sponsorship and partnership inquiries.
 ---
 
-<!-- Contact form is a Notion form — submissions land in the private
-     "BH Motorsport — Website Inquiries" Notion database. Manage questions and
-     the share link from that database's Contact Form view in Notion.
-     The default markup is a link card; a script upgrades it to an inline
-     embed except on WebKit (Safari/iOS), which crash-loops on Notion embeds. -->
-<div id="contact-form-slot">
-  <div class="form-open-card">
-    <p>Tell us who you are and what you're looking for — sponsorship, events, media, or anything else. It goes straight to the team.</p>
-    <a class="btn btn-primary" href="https://hospitable-witch-865.notion.site/14a6316f845b40b7ad1772263f9eba59" target="_blank" rel="noopener">Open the Contact Form</a>
+<!-- Form posts to a Cloudflare Worker (bh-contact) that writes each submission
+     to the private "BH Motorsport — Website Inquiries" Notion database.
+     Worker source: ~/Projects/bh-contact-worker -->
+<form class="form-grid" id="contact-form" method="POST" action="https://bh-contact.bhmotorsport.workers.dev">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required autocomplete="name">
   </div>
-</div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required autocomplete="email">
+  </div>
+  <div>
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company" required autocomplete="organization">
+  </div>
+  <div>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required autocomplete="tel">
+  </div>
+  <div>
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic">
+      <option>Sponsorship / Partnership</option>
+      <option>Events</option>
+      <option>Media</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+  <!-- Honeypot: hidden from real visitors; bots that fill it are dropped -->
+  <div class="hp-field" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
+  </div>
+  <p class="form-status" id="form-status" role="status"></p>
+</form>
+
 <script>
   (function () {
-    if (navigator.vendor && navigator.vendor.indexOf('Apple') === 0) return;
-    document.getElementById('contact-form-slot').innerHTML =
-      '<div class="notion-form-embed"><iframe src="https://hospitable-witch-865.notion.site/ebd/14a6316f845b40b7ad1772263f9eba59" title="Contact form" loading="lazy"></iframe></div>' +
-      '<p class="form-fallback">Form not loading? <a href="https://hospitable-witch-865.notion.site/14a6316f845b40b7ad1772263f9eba59" target="_blank" rel="noopener">Open it in a new tab</a>.</p>';
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    var button = document.getElementById('contact-submit');
+
+    function showSuccess() {
+      form.innerHTML = '<p class="form-success">Thanks — your message is in. We\'ll get back to you shortly.</p>';
+    }
+
+    if (window.location.search.indexOf('sent=1') !== -1) { showSuccess(); return; }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      status.textContent = '';
+
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        if (res.ok) { showSuccess(); return; }
+        return res.json().then(function (body) { throw new Error(body.error || 'Something went wrong.'); });
+      }).catch(function (err) {
+        button.disabled = false;
+        button.textContent = 'Send Message';
+        status.textContent = err.message + ' You can also email us directly.';
+      });
+    });
   })();
 </script>
