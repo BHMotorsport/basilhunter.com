@@ -27,11 +27,13 @@ Then in the repo: Settings > Pages > Custom domain > enter `basilhunter.com`
 and check "Enforce HTTPS" once the certificate appears (up to 24 hours,
 usually much faster). The CNAME file in this repo keeps the setting sticky.
 
-### 3. Wire up the contact form
+### 3. Contact form (done — Notion)
 
-1. Create a free account at formspree.io
-2. Create a form, point it at the inbox that should receive inquiries
-3. In `contact.html`, replace `YOUR_FORM_ID` with the ID Formspree provides
+The contact page embeds a Notion form. Submissions land as rows in the
+private Notion database "BH Motorsport — Website Inquiries" with Name,
+Email, Company, Phone, Topic, and Message (all but Name required).
+To change questions or the share link, open that database in Notion and
+edit the "Contact Form" view. The embed URL lives in `contact.html`.
 
 ### 4. Replace placeholders before launch
 
