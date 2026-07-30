@@ -4,7 +4,7 @@ title: Partner With Us
 permalink: /sponsors/
 kicker: Sponsorship
 subtitle: Put your brand on the car, in the paddock, and in front of an audience that shows up.
-description: Sponsorship and partnership opportunities with the Basil Hunter Motorsport program.
+description: Sponsorship and partnership opportunities with the GrahamStone Motorsport program.
 ---
 
 ## Why Partner With the Program
@@ -36,7 +36,7 @@ Motorsport sponsorship works because the setting does the selling. A track weeke
     <tr><td>Primary Partner</td><td>Feature placement on the car, named in every recap and video, trackside hospitality at all events.</td><td>Inquire for terms</td></tr>
     <tr><td>Supporting Partner</td><td>Logo on the car, featured in event content, hospitality at select events.</td><td>Inquire for terms</td></tr>
     <tr><td>Event Partner</td><td>Single-event placement and content feature.</td><td>Inquire for terms</td></tr>
-    <tr><td>Website Partner</td><td>Logo and link on basilhunter.com, listed in the partners section.</td><td>Inquire for terms</td></tr>
+    <tr><td>Website Partner</td><td>Logo and link on grahamstone.ai, listed in the partners section.</td><td>Inquire for terms</td></tr>
   </tbody>
 </table>
 

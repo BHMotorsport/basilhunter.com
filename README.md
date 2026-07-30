@@ -1,6 +1,6 @@
-# basilhunter.com
+# grahamstone.ai
 
-Jekyll site for the Basil Hunter Investment Group motorsport program.
+Jekyll site for the GrahamStone Venture motorsport program.
 Hosted on GitHub Pages, same workflow as the RX2 site.
 
 ## Launch checklist
@@ -13,7 +13,7 @@ Hosted on GitHub Pages, same workflow as the RX2 site.
 
 ### 2. Point the domain
 
-At your domain registrar, add these DNS records for basilhunter.com:
+At your domain registrar, add these DNS records for grahamstone.ai:
 
 | Type  | Host | Value               |
 |-------|------|---------------------|
@@ -23,14 +23,14 @@ At your domain registrar, add these DNS records for basilhunter.com:
 | A     | @    | 185.199.111.153     |
 | CNAME | www  | YOUR-USERNAME.github.io |
 
-Then in the repo: Settings > Pages > Custom domain > enter `basilhunter.com`
+Then in the repo: Settings > Pages > Custom domain > enter `grahamstone.ai`
 and check "Enforce HTTPS" once the certificate appears (up to 24 hours,
 usually much faster). The CNAME file in this repo keeps the setting sticky.
 
 ### 3. Contact form (done — Notion)
 
 The contact page embeds a Notion form. Submissions land as rows in the
-private Notion database "BH Motorsport — Website Inquiries" with Name,
+private Notion database "GrahamStone Motorsport — Website Inquiries" with Name,
 Email, Company, Phone, Topic, and Message (all but Name required).
 To change questions or the share link, open that database in Notion and
 edit the "Contact Form" view. The embed URL lives in `contact.html`.
@@ -43,7 +43,7 @@ edit the "Contact Form" view. The embed URL lives in `contact.html`.
 - `gallery.md` — swap `VIDEO_ID` for real YouTube video IDs
 - `events.html` — real event schedule
 - `sponsors.md` — real partnership tiers and terms
-- `_config.yml` — author email if a basilhunter.com address gets set up
+- `_config.yml` — author email if a grahamstone.ai address gets set up
 - `_posts/2026-07-25-sample-recap-template.md` — DELETE before launch (it is a template and will show on the live site)
 
 ## Posting an event recap

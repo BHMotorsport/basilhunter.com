@@ -4,7 +4,7 @@ title: Gallery
 permalink: /gallery/
 kicker: Photos & Video
 subtitle: From the paddock, the pit lane, and the racing line.
-description: Photos and video from Basil Hunter Motorsport track events.
+description: Photos and video from GrahamStone Motorsport track events.
 ---
 
 ## Video

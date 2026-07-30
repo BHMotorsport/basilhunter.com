@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Basil Hunter Motorsport — basilhunter.com
+   GrahamStone Motorsport — grahamstone.ai
    Dark, sleek, soft-on-the-eyes. Barlow Condensed headings, Inter body.
    ========================================================================== */
 
@@ -18,7 +18,7 @@
   --radius: 10px;
   --font-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
-  --font-brand: "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-brand: "Saira Condensed", "Arial Narrow", sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,25 +78,30 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
 
 .brand { display: flex; align-items: center; gap: 12px; color: var(--text); }
 
-.brand-text { display: flex; flex-direction: column; gap: 3px; line-height: 1.1; }
+.brand-text { display: flex; flex-direction: column; gap: 5px; line-height: 1; }
 
-/* 3A lockup — EB Garamond, tracked wide, endorsement line in the same voice */
+/* GrahamStone ruled-italic lockup — heavy oblique condensed over a rule,
+   letterspaced MOTORSPORT beside it (6° skew per the brand sheet) */
 .brand-name {
   font-family: var(--font-brand);
-  font-weight: 400; font-size: 1.22rem;
-  letter-spacing: 0.2em; margin-right: -0.2em;
+  font-weight: 600; font-size: 1.4rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  transform: skewX(-6deg);
   white-space: nowrap;
 }
 
 .brand-sub {
+  display: flex; align-items: center; gap: 10px;
+  transform: skewX(-6deg);
   font-family: var(--font-brand);
-  font-size: 0.6rem; font-weight: 400;
+  font-size: 0.62rem; font-weight: 500;
   letter-spacing: 0.3em; margin-right: -0.3em;
   text-transform: uppercase;
   color: var(--text-soft);
   white-space: nowrap;
 }
+.brand-sub::before { content: ""; flex: 1; min-width: 36px; height: 2px; background: var(--text); }
 
 @media (max-width: 480px) { .brand-sub { display: none; } }
 
@@ -346,8 +351,9 @@ input:focus, textarea:focus, select:focus {
 .partners-strip h2 {
   color: #fff;
   font-family: var(--font-brand);
-  font-weight: 400;
-  letter-spacing: 0.2em; margin-right: -0.2em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transform: skewX(-6deg);
 }
 
 .partners-logos {
@@ -393,27 +399,26 @@ input:focus, textarea:focus, select:focus {
 
 .footer-brand {
   font-family: var(--font-brand);
-  font-weight: 400; font-size: 1.3rem;
-  letter-spacing: 0.2em; margin-right: -0.2em;
+  font-weight: 600; font-size: 1.5rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  transform: skewX(-6deg);
+  margin-bottom: 7px;
   white-space: nowrap;
 }
 
-/* 3A endorsement line — hairline rules either side */
 .footer-sub {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 10px;
+  transform: skewX(-6deg);
   font-family: var(--font-brand);
   color: var(--text-soft);
-  font-size: 0.66rem; letter-spacing: 0.3em; margin-right: -0.3em;
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.3em; margin-right: -0.3em;
   text-transform: uppercase;
   white-space: nowrap;
   margin: 0;
 }
-.footer-sub::before, .footer-sub::after {
-  content: ""; width: 32px; height: 1px;
-  background: var(--line); flex: none;
-}
+.footer-sub::before { content: ""; flex: 1; min-width: 40px; height: 2px; background: var(--text-soft); }
 
 .footer-links { list-style: none; display: flex; gap: 26px; flex-wrap: wrap; }
 .footer-links a { color: var(--text-soft); font-size: 0.92rem; }

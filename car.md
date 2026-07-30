@@ -4,7 +4,7 @@ title: The Car
 permalink: /car/
 kicker: 2016 Porsche Cayman GTS
 subtitle: A 981-generation Cayman GTS built into a dedicated track car. Mid-engine balance, a full safety package, and a brake setup chosen for repeated hard sessions.
-description: The Basil Hunter Motorsport 981 Porsche Cayman GTS track build. Full specs, safety package, and build details.
+description: The GrahamStone Motorsport 981 Porsche Cayman GTS track build. Full specs, safety package, and build details.
 ---
 
 ## Platform
