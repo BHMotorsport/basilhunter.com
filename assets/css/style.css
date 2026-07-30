@@ -144,14 +144,17 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
 
 .hero {
   padding: 110px 0 90px;
+  /* Dark scrim over the car photo keeps the headline readable; heavier at the
+     bottom so the hero blends into the page background */
   background:
-    radial-gradient(1100px 500px at 80% -10%, rgba(126, 156, 210, 0.10), transparent 60%),
-    linear-gradient(180deg, var(--bg-inset), var(--bg));
+    linear-gradient(90deg, rgba(16, 18, 22, 0.55) 0%, rgba(16, 18, 22, 0.30) 45%, rgba(16, 18, 22, 0) 70%),
+    linear-gradient(180deg, rgba(16, 18, 22, 0.72) 0%, rgba(16, 18, 22, 0.52) 55%, rgba(20, 22, 26, 0.96) 100%),
+    url('/assets/img/hero-car.jpg') center 46% / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 
 .hero h1 { max-width: 12em; }
-.hero .lede { margin-top: 1em; }
+.hero .lede { margin-top: 1em; max-width: 28em; }
 
 .hero-actions { margin-top: 2em; display: flex; gap: 14px; flex-wrap: wrap; }
 
