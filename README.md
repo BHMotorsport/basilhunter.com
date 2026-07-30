@@ -37,7 +37,6 @@ edit the "Contact Form" view. The embed URL lives in `contact.html`.
 
 ### 4. Replace placeholders before launch
 
-- `assets/img/car-hero.jpg` — hero photo of the car (referenced on The Car page)
 - `assets/img/og-default.jpg` — default social share image, 1200x630px
 - `assets/img/gallery/` — gallery photos, compressed under ~400KB, 1600px wide max
 - `assets/img/partners/` — swap the placeholder SVGs for real partner logos (white/light versions read best on the navy band); update the links in `index.html` to each partner's site

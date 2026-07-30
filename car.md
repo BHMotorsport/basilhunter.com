@@ -7,9 +7,6 @@ subtitle: A 981-generation Cayman GTS built into a dedicated track car. Mid-engi
 description: The Basil Hunter Motorsport 981 Porsche Cayman GTS track build. Full specs, safety package, and build details.
 ---
 
-<!-- PLACEHOLDER: swap in a real hero shot of the car -->
-![The Basil Hunter Motorsport Cayman GTS](/assets/img/car-hero.jpg)
-
 ## Platform
 
 The 981 Cayman GTS is one of the most naturally balanced track platforms Porsche has built. The engine sits in the middle of the car, weight is under 3,000 pounds, and the chassis communicates clearly at the limit. It rewards clean driving instead of masking mistakes with horsepower.
