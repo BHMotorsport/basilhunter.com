@@ -308,6 +308,15 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
 
 .form-fallback { margin-top: 14px; color: var(--text-soft); font-size: 0.9rem; }
 
+.form-open-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  max-width: 620px;
+}
+.form-open-card p { color: var(--text-soft); margin-bottom: 1.6em; }
+
 
 .form-grid { display: grid; gap: 18px; max-width: 620px; }
 

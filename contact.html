@@ -7,14 +7,22 @@ subtitle: Sponsorship inquiries, event questions, or anything else. Submissions 
 description: Contact Basil Hunter Motorsport for sponsorship and partnership inquiries.
 ---
 
-<!-- Contact form is a Notion form embed — submissions land in the private
+<!-- Contact form is a Notion form — submissions land in the private
      "BH Motorsport — Website Inquiries" Notion database. Manage questions and
-     the share link from that database's Contact Form view in Notion. -->
-<div class="notion-form-embed">
-  <iframe src="https://hospitable-witch-865.notion.site/ebd//14a6316f845b40b7ad1772263f9eba59"
-          title="Contact form"
-          loading="lazy"
-          allowfullscreen></iframe>
+     the share link from that database's Contact Form view in Notion.
+     The default markup is a link card; a script upgrades it to an inline
+     embed except on WebKit (Safari/iOS), which crash-loops on Notion embeds. -->
+<div id="contact-form-slot">
+  <div class="form-open-card">
+    <p>Tell us who you are and what you're looking for — sponsorship, events, media, or anything else. It goes straight to the team.</p>
+    <a class="btn btn-primary" href="https://hospitable-witch-865.notion.site/14a6316f845b40b7ad1772263f9eba59" target="_blank" rel="noopener">Open the Contact Form</a>
+  </div>
 </div>
-
-<p class="form-fallback">Form not loading? <a href="https://hospitable-witch-865.notion.site/14a6316f845b40b7ad1772263f9eba59" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+<script>
+  (function () {
+    if (navigator.vendor && navigator.vendor.indexOf('Apple') === 0) return;
+    document.getElementById('contact-form-slot').innerHTML =
+      '<div class="notion-form-embed"><iframe src="https://hospitable-witch-865.notion.site/ebd/14a6316f845b40b7ad1772263f9eba59" title="Contact form" loading="lazy"></iframe></div>' +
+      '<p class="form-fallback">Form not loading? <a href="https://hospitable-witch-865.notion.site/14a6316f845b40b7ad1772263f9eba59" target="_blank" rel="noopener">Open it in a new tab</a>.</p>';
+  })();
+</script>
