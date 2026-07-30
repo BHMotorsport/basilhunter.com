@@ -1,6 +1,6 @@
 # grahamstone.ai
 
-Jekyll site for the GrahamStone Venture motorsport program.
+Jekyll site for the GrahamStone Ventures motorsport program.
 Hosted on GitHub Pages, same workflow as the RX2 site.
 
 ## Launch checklist
