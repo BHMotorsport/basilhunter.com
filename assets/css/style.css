@@ -188,7 +188,9 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
   border-bottom: 1px solid var(--line);
 }
 
-.page-body { padding: 56px 0 90px; }
+/* Top/bottom only — must not override .container's 24px side padding,
+   or body text sits 24px left of the page-hero text */
+.page-body { padding-top: 56px; padding-bottom: 90px; }
 
 /* --- Sections & cards ----------------------------------------------------- */
 
