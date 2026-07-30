@@ -14,7 +14,7 @@ Motorsport sponsorship works because the setting does the selling. A track weeke
 <div class="grid-3" style="margin: 1.5em 0 2.5em;">
   <div class="card">
     <h3>On-Car Visibility</h3>
-    <p>Logo placement on a Porsche Cayman GTS that runs regular events at New Jersey Motorsports Park, photographed and filmed at every outing.</p>
+    <p>Logo placement on a Porsche Cayman GTS campaigned at the Mid-Atlantic and Northeast's best road courses, photographed and filmed at every outing.</p>
   </div>
   <div class="card">
     <h3>Content You Can Use</h3>
