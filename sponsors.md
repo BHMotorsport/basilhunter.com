@@ -28,11 +28,16 @@ Motorsport sponsorship works because the setting does the selling. A track weeke
 
 ## Partnership Levels
 
-<!-- PLACEHOLDER: define real tiers and pricing before launch. Structure below is a starting point. -->
-<table class="spec-table">
-  <tr><th>Primary Partner</th><td>Feature placement on the car, named in every recap and video, trackside hospitality at all events. [PLACEHOLDER: terms]</td></tr>
-  <tr><th>Supporting Partner</th><td>Logo on the car, featured in event content, hospitality at select events. [PLACEHOLDER: terms]</td></tr>
-  <tr><th>Event Partner</th><td>Single-event placement and content feature. [PLACEHOLDER: terms]</td></tr>
+<table class="events-table">
+  <thead>
+    <tr><th>Tier</th><th>What You Get</th><th>Terms</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Primary Partner</td><td>Feature placement on the car, named in every recap and video, trackside hospitality at all events.</td><td>Inquire for terms</td></tr>
+    <tr><td>Supporting Partner</td><td>Logo on the car, featured in event content, hospitality at select events.</td><td>Inquire for terms</td></tr>
+    <tr><td>Event Partner</td><td>Single-event placement and content feature.</td><td>Inquire for terms</td></tr>
+    <tr><td>Website Partner</td><td>Logo and link on basilhunter.com, listed in the partners section.</td><td>Inquire for terms</td></tr>
+  </tbody>
 </table>
 
 ## Start the Conversation

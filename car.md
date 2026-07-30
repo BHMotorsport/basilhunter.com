@@ -24,14 +24,14 @@ The 981 Cayman GTS is one of the most naturally balanced track platforms Porsche
 Brakes are the first thing a track car exposes. This setup is built for full sessions with no fade.
 
 <table class="spec-table">
-  <tr><th>Rotors</th><td>Girodisc two-piece, 350mm front and matching rear</td></tr>
+  <tr><th>Rotors</th><td>Girodisc two-piece, front and rear</td></tr>
   <tr><th>Pads</th><td>Pagid RS29, front and rear</td></tr>
   <tr><th>Fluid</th><td>Castrol SRF</td></tr>
 </table>
 
 ## Safety Package
 
-The cabin runs a full driver safety setup meeting current FIA harness standards.
+The cabin runs a full driver safety setup, including FIA 8853-2016 harnesses and an SFI-rated head restraint.
 
 <table class="spec-table">
   <tr><th>Seats</th><td>Kinetic Apex XL RCF Comfort Shell with steel side mounts</td></tr>
@@ -43,4 +43,4 @@ The cabin runs a full driver safety setup meeting current FIA harness standards.
 
 ## Where It Runs
 
-The program's home circuits are the Lightning and Thunderbolt courses at New Jersey Motorsports Park in Millville, New Jersey, with additional venues in rotation. Every event gets a full recap on the [events page](/events/).
+The program runs the Mid-Atlantic and Northeast road course circuit, with racing operations based in the Philadelphia metro area. Events run primarily with the Porsche Club of America (PCA) at the region's best road courses: the Lightning and Thunderbolt circuits at New Jersey Motorsports Park, Pocono Raceway, Summit Point, and Watkins Glen. Every event gets a full recap on the [events page](/events/).
