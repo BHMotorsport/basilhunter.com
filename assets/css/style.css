@@ -291,6 +291,17 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
 .post-body h2 { margin-top: 1.6em; }
 .post-body img { margin: 1.4em 0; }
 
+.post-partners {
+  margin-top: 3em;
+  padding: 26px 28px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.post-partners h2 { margin-top: 0; font-size: 1.3rem; }
+.post-partners p { color: var(--text-soft); }
+.post-partners p:last-child { margin-bottom: 0; }
+
 .post-share {
   margin-top: 3em; padding-top: 1.4em;
   border-top: 1px solid var(--line);
