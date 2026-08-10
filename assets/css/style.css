@@ -15,6 +15,15 @@
   --brand-navy: #1b3a6b;      /* Sapphire Blue — brand color */
   --brand-navy-deep: #12294d; /* gradient low end */
   --brand-navy-high: #24467a; /* gradient high end */
+  /* Motorsport lockup — blue */
+  --brand-blue: #2f6fdb;      /* royal blue — tile, first slash */
+  --brand-blue-mid: #6d9ce9;  /* second slash */
+  --brand-blue-soft: #a9c6f2; /* third slash */
+  --brand-ink: #131a2b;       /* near-black — strike on a blue tile */
+  /* adVenture lockup — coral */
+  --brand-coral: #f2544a;      /* tile, first two slashes, the "ad" strike */
+  --brand-coral-deep: #b9372f; /* third slash */
+  --struck-text: #6f5b58;      /* the dimmed "ad" itself */
   --radius: 10px;
   --font-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
@@ -80,30 +89,53 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
 
 .brand-text { display: flex; flex-direction: column; gap: 5px; line-height: 1; }
 
-/* GrahamStone ruled-italic lockup — heavy oblique condensed over a rule,
-   letterspaced MOTORSPORT beside it (6° skew per the brand sheet) */
+/* GrahamStone Motorsport lockup (logo sheet 2026-08-10): blue GS tile struck
+   through, heavy oblique condensed wordmark, and a tinted /// slash trio
+   leading a letterspaced MOTORSPORT. */
 .brand-name {
   font-family: var(--font-brand);
-  font-weight: 600; font-size: 1.4rem;
-  letter-spacing: 0.06em;
+  font-weight: 700; font-size: 1.5rem;
+  letter-spacing: 0.005em;
+  line-height: 1;
   text-transform: uppercase;
-  transform: skewX(-6deg);
+  transform: skewX(-10deg);
+  transform-origin: left bottom;
   white-space: nowrap;
 }
 
 .brand-sub {
-  display: flex; align-items: center; gap: 10px;
-  transform: skewX(-6deg);
+  display: flex; align-items: center; gap: 11px;
   font-family: var(--font-brand);
-  font-size: 0.62rem; font-weight: 500;
-  letter-spacing: 0.3em; margin-right: -0.3em;
+  font-size: 0.64rem; font-weight: 600;
+  letter-spacing: 0.34em; margin-right: -0.34em;
   text-transform: uppercase;
-  color: var(--text-soft);
+  color: var(--text);
   white-space: nowrap;
 }
-.brand-sub::before { content: ""; flex: 1; min-width: 36px; height: 2px; background: var(--text); }
 
-@media (max-width: 480px) { .brand-sub { display: none; } }
+/* The /// device — three skewed bars stepping down in tint */
+.slashes { display: inline-flex; align-items: center; gap: 4px; flex: none; }
+.slashes i {
+  display: block;
+  width: 6px; height: 15px;
+  border-radius: 1px;
+  transform: skewX(-15deg);
+  /* Anchor the skew at the bottom-left, same as .brand-name, so the first
+     slash's bottom tip lines up with the bottom-left of the G above it */
+  transform-origin: left bottom;
+  background: var(--brand-blue);
+}
+.slashes i:nth-child(2) { background: var(--brand-blue-mid); }
+.slashes i:nth-child(3) { background: var(--brand-blue-soft); }
+
+/* nth-child selectors above outrank a bare .slashes--coral i, so the coral
+   variant has to restate each position */
+.slashes--coral i,
+.slashes--coral i:nth-child(2) { background: var(--brand-coral); }
+.slashes--coral i:nth-child(3) { background: var(--brand-coral-deep); }
+
+/* Nav only — the footer keeps its endorsement line at every width */
+@media (max-width: 480px) { .brand .brand-sub { display: none; } }
 
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
@@ -418,28 +450,79 @@ input:focus, textarea:focus, select:focus {
   padding-bottom: 32px;
 }
 
-.footer-brand {
+/* GrahamStone adVenture lockup — GS tile struck through, and "ad" struck out
+   of the wordmark so it reads GrahamStone Venture. The struck letters are
+   aria-hidden, so assistive tech and search engines get the read-aloud name. */
+.footer-logo { display: flex; align-items: center; gap: 16px; }
+
+.footer-lockup { display: flex; flex-direction: column; gap: 5px; }
+
+/* Struck GS monogram tile. Colour comes from --tile-bg / --tile-strike so a
+   variant can be dropped in without touching the geometry. */
+.gs-tile {
+  position: relative;
+  flex: none;
+  width: 56px; height: 56px;
+  border-radius: 8px;
+  background: var(--tile-bg, var(--brand-blue));
+  display: grid; place-items: center;
+}
+.gs-tile > span {
   font-family: var(--font-brand);
-  font-weight: 600; font-size: 1.5rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transform: skewX(-6deg);
-  margin-bottom: 7px;
-  white-space: nowrap;
+  font-weight: 700; font-size: 1.85rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: #fff;
+  transform: skewX(-10deg);
+}
+.gs-tile::after {
+  content: "";
+  position: absolute;
+  left: 5%; right: 5%; top: 50%;
+  height: 3px; border-radius: 2px;
+  background: var(--tile-strike, var(--brand-ink));
+  transform: rotate(-24deg);
 }
 
-.footer-sub {
-  display: flex; align-items: center; gap: 10px;
-  transform: skewX(-6deg);
-  font-family: var(--font-brand);
-  color: var(--text-soft);
-  font-size: 0.68rem; font-weight: 500;
-  letter-spacing: 0.3em; margin-right: -0.3em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  margin: 0;
+.gs-tile--blue  { --tile-bg: var(--brand-blue);  --tile-strike: var(--brand-ink); }
+.gs-tile--coral { --tile-bg: var(--brand-coral); --tile-strike: #111; }
+
+/* Nav sits shorter than the footer, so the tile scales down with it */
+.brand .gs-tile { width: 42px; height: 42px; border-radius: 6px; }
+.brand .gs-tile > span { font-size: 1.4rem; }
+.brand .gs-tile::after { height: 2.5px; }
+
+/* The adVenture endorsement line keeps its mixed case, so it opts out of the
+   uppercase the MOTORSPORT line uses. "ad" is dimmed and struck; it is
+   aria-hidden, so the mark still reads "GrahamStone Venture". */
+.brand-sub--venture {
+  text-transform: none;
+  letter-spacing: 0.2em; margin-right: -0.2em;
 }
-.footer-sub::before { content: ""; flex: 1; min-width: 40px; height: 2px; background: var(--text-soft); }
+
+.venture-word .struck {
+  position: relative;
+  display: inline-block;
+  color: var(--struck-text);
+}
+.venture-word .struck::after {
+  content: "";
+  position: absolute;
+  left: -0.2em; right: -0.14em; top: 52%;
+  height: 0.1em; min-height: 2px; border-radius: 1px;
+  background: var(--brand-coral);
+  transform: rotate(-5deg);
+}
+
+/* Footer carries the lockup larger than the nav does */
+.footer-logo .brand-name { font-size: clamp(1.6rem, 5.4vw, 2.15rem); }
+.footer-logo .brand-sub { font-size: 0.85rem; gap: 11px; }
+.footer-logo .slashes i { width: 7px; height: 18px; }
+
+@media (max-width: 480px) {
+  .footer-logo .brand-sub { font-size: 0.78rem; }
+  .footer-logo .slashes i { width: 6px; height: 16px; }
+}
 
 .footer-links { list-style: none; display: flex; gap: 26px; flex-wrap: wrap; }
 .footer-links a { color: var(--text-soft); font-size: 0.92rem; }
