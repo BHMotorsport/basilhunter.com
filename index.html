@@ -44,9 +44,19 @@ description: The GrahamStone Venture Motorsport program. A Porsche Cayman GTS ca
     <h2>In the Paddock With</h2>
     <!-- As partners sign on, drop their logo files (SVG or PNG, transparent
          background, white/light versions work best on the navy band) into
-         /assets/img/partners/ and add a link+img row below. -->
-    <div class="partners-logos">
-      <a href="https://www.rx2solutions.com" target="_blank" rel="noopener"><img src="{{ '/assets/img/partners/rx2-solutions.png' | relative_url }}" alt="RX2 Solutions"></a>
+         /assets/img/partners/. Primary partner sits in the center column;
+         supporting partners alternate into the left and right columns. -->
+    <div class="partners-tiers">
+      <div class="partner partner-primary">
+        <a href="https://www.rx2solutions.com" target="_blank" rel="noopener"><img src="{{ '/assets/img/partners/rx2-solutions.png' | relative_url }}" alt="RX2 Solutions"></a>
+        <span class="partner-tier-label">Primary Partner</span>
+      </div>
+      <div class="partner partner-side partner-side-left">
+        <a href="https://www.jamesgreyint.com" target="_blank" rel="noopener"><img src="{{ '/assets/img/partners/james-grey-international.png' | relative_url }}" alt="James Grey International"></a>
+        <span class="partner-tier-label">Supporting Partner</span>
+      </div>
+      <!-- next supporting partner: copy a partner-side block above and use
+           class "partner partner-side partner-side-right" -->
     </div>
     <a class="partners-cta" href="{{ '/sponsors/' | relative_url }}">Become a Partner</a>
   </div>
