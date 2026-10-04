@@ -186,7 +186,7 @@ img { max-width: 100%; display: block; border-radius: var(--radius); }
   background:
     linear-gradient(90deg, rgba(16, 18, 22, 0.55) 0%, rgba(16, 18, 22, 0.30) 45%, rgba(16, 18, 22, 0) 70%),
     linear-gradient(180deg, rgba(16, 18, 22, 0.72) 0%, rgba(16, 18, 22, 0.52) 55%, rgba(20, 22, 26, 0.96) 100%),
-    url('/assets/img/hero-car.jpg') center 46% / cover no-repeat;
+    url('/assets/img/hero-car-17-paddock.jpg') center 46% / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 
